@@ -18,6 +18,7 @@ const getResult = (computerNum, myNum) => {
   const hitData = {
     strike: 0,
     ball: 0,
+    isWin: false,
   };
 
   for (const num of myNum) {
@@ -28,7 +29,11 @@ const getResult = (computerNum, myNum) => {
       hitData.ball += 1;
     }
   }
-  console.log(hitData.strike, hitData.ball);
+  return hitData;
+};
+
+const checkGameWin = ({ strike }) => {
+  return strike === 3 ? true : false;
 };
 
 const play = () => {
@@ -39,7 +44,9 @@ const play = () => {
   console.log(numArray);
 
   // 비교 수행
-  getResult(numArray[0], numArray[1]);
+  const gameResult = getResult(numArray[0], numArray[1]);
+
+  console.log(checkGameWin(gameResult));
 };
 
 const $submitButton = document.querySelector('#submit');
