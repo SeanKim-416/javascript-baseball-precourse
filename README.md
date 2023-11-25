@@ -18,11 +18,13 @@
 
 ## 기능구현
 
-### makeRandomIndex : 랜덤한 정수를 반환하는 함수
+### createComputerNum.js
+
+#### makeRandomIndex : 랜덤한 정수를 반환하는 함수
 
 - 배열의 길이를 인자로 받음.
 
-### createComputerNum : 컴퓨터의 숫자를 만드는 함수
+#### createComputerNum : 컴퓨터의 숫자를 만드는 함수
 
 - 1~9까지의 배열을 저장
 - makeRandomIndex를 호출하여 인덱스를 지정
