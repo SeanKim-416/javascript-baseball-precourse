@@ -1,4 +1,5 @@
 import createComputerNum from './createComputerNum.js';
+import { showSuggestion, hideSuggestion, printResult } from './handleElement.js';
 
 const COMPUTER_NUM = createComputerNum();
 const numArray = [COMPUTER_NUM, null];
@@ -44,19 +45,6 @@ const formatResult = (gameResult) => {
   if (ball) resultTemplate.unshift(`${ball}볼`);
 
   return resultTemplate.length ? resultTemplate.join(' ') : '낫싱';
-};
-
-const printResult = (text = '') => {
-  const $resultDiv = document.querySelector('#result');
-  $resultDiv.textContent = text;
-};
-
-const showSuggestion = () => {
-  document.querySelector('#suggestion').style.display = 'block';
-};
-
-const hideSuggestion = () => {
-  document.querySelector('#suggestion').style.display = 'none';
 };
 
 const play = () => {
