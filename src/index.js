@@ -5,12 +5,20 @@ const numArray = [COMPUTER_NUM, null];
 
 const getUserInput = () => {
   const $userInput = document.querySelector('#user-input');
-  // 올바른 값인지 확인
+
+  if (isNaN($userInput.value)) {
+    $userInput.value = '';
+    alert('올바른 값을 입력하세요.');
+    return;
+  }
   return $userInput.value;
 };
 
 const play = () => {
-  numArray[1] = getUserInput();
+  const userNum = getUserInput();
+  if (!userNum) return;
+
+  numArray[1] = userNum;
   console.log(numArray);
 };
 
