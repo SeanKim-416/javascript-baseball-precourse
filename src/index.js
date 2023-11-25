@@ -51,20 +51,8 @@ const printResult = (text = '') => {
   $resultDiv.textContent = text;
 };
 
-const createSuggestion = () => {
-  const $suggestionText = document.createElement('span');
-  $suggestionText.textContent = '게임을 새로 시작하시겠습니까?';
-
-  const $suggestionButton = document.createElement('button');
-  $suggestionButton.textContent = '게임 재시작';
-  $suggestionButton.id = 'game-restart-button';
-
-  const $suggestionDiv = document.createElement('div');
-  $suggestionDiv.appendChild($suggestionText);
-  $suggestionDiv.appendChild($suggestionButton);
-
-  const $app = document.querySelector('#app');
-  $app.appendChild($suggestionDiv);
+const showSuggestion = () => {
+  document.querySelector('#suggestion').style.display = 'block';
 };
 
 const play = () => {
@@ -79,7 +67,8 @@ const play = () => {
 
   if (checkGameWin(gameResult)) {
     printResult('🎉 정답을 맞추셨습니다!🎉');
-    createSuggestion();
+    showSuggestion();
+
     return;
   }
 
