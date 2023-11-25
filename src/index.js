@@ -36,6 +36,16 @@ const checkGameWin = ({ strike }) => {
   return strike === 3 ? true : false;
 };
 
+const formatResult = (gameResult) => {
+  const { strike, ball } = gameResult;
+  const resultTemplate = [];
+
+  if (strike) resultTemplate.push(`${strike}스트라이크`);
+  if (ball) resultTemplate.unshift(`${ball}볼`);
+
+  return resultTemplate.length ? resultTemplate.join(' ') : '낫싱';
+};
+
 const play = () => {
   const userNum = getUserInput();
   if (!userNum) return;
@@ -46,7 +56,12 @@ const play = () => {
   // 비교 수행
   const gameResult = getResult(numArray[0], numArray[1]);
 
-  console.log(checkGameWin(gameResult));
+  if (checkGameWin(gameResult)) {
+    console.log('이김');
+    return;
+  }
+
+  console.log(formatResult(gameResult));
 };
 
 const $submitButton = document.querySelector('#submit');
