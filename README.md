@@ -55,3 +55,5 @@
 ### formatGameResult : 게임 결과를 문자열에 맞게 반환
 
 ### printResult : 게임 결과의 문자열을 html 요소에 출력
+
+### createSuggestion : 다시 플레이하시겠습니까? 라는 텍스트와 버튼이 있는 div 생성
