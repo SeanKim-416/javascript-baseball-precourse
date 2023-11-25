@@ -1,3 +1,4 @@
+// 유저의 입력값을 받아옴
 const getUserInput = () => {
   const $userInput = document.querySelector('#user-input');
 
@@ -9,6 +10,7 @@ const getUserInput = () => {
   return $userInput.value;
 };
 
+// 게임 결과를 만들어 반환
 const getResult = (computerNum, myNum) => {
   const hitData = {
     strike: 0,
@@ -27,10 +29,12 @@ const getResult = (computerNum, myNum) => {
   return hitData;
 };
 
+// 게임이 이겼는지 확인
 const checkGameWin = ({ strike }) => {
   return strike === 3 ? true : false;
 };
 
+// 게임 결과를 문자열 형식으로 반환
 const formatResult = (gameResult) => {
   const { strike, ball } = gameResult;
   const resultTemplate = [];

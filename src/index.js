@@ -2,9 +2,10 @@ import createComputerNum from './createComputerNum.js';
 import { showSuggestion, hideSuggestion, printResult } from './handleElement.js';
 import { getResult, getUserInput, checkGameWin, formatResult } from './utils.js';
 
-const COMPUTER_NUM = createComputerNum();
-const numArray = [COMPUTER_NUM, null];
+// 게임을 진행할 변수 데이터
+const numArray = [null, null];
 
+// 게임 초기화
 const resetGame = () => {
   numArray[0] = createComputerNum();
   const $userInput = document.querySelector('#user-input');
@@ -14,6 +15,7 @@ const resetGame = () => {
   hideSuggestion();
 };
 
+// 게임 진행
 const play = () => {
   const userNum = getUserInput();
   if (!userNum) return;
@@ -26,12 +28,14 @@ const play = () => {
   if (checkGameWin(gameResult)) {
     printResult('🎉 정답을 맞추셨습니다!🎉');
     showSuggestion();
-
     return;
   }
 
   printResult(formatResult(gameResult));
 };
+
+// 게임 초기화 실행
+resetGame();
 
 const $submitButton = document.querySelector('#submit');
 $submitButton.addEventListener('click', play);
