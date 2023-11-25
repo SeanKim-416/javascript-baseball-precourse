@@ -32,32 +32,51 @@
 - 중복된 숫자가 나오지 않도록 배열에서 해당 인덱스 값은 제외함
 - 3번 반복 후 문자열 반환
 
-### play : 확인 버튼 이벤트 리스너 콜백
+### index.js
 
-- 세부 동작은 추후 작성 예정
+#### play : 확인 버튼 이벤트 리스너 콜백
 
-### getUserInput : 유저의 입력값을 가져오는 함수
+- 게임을 진행하는 함수
+
+#### resetGame : 게임을 초기화 하는 함수
+
+- input값 초기화
+- 컴퓨터의 변수 초기화
+- 재시작 div 가림
+
+### utils.js
+
+#### getUserInput : 유저의 입력값을 가져오는 함수
 
 - 문자열로 반환함
 - 숫자가 아니면 아무것도 반환하지 않음
 
-### getResult : 비교 수행
+#### getResult : 비교 수행
 
 - 3번 반복
 - 내 숫자가 상대의 숫자와 같은 인덱스의 위치에 있으면 strike 증가
 - 내 숫자가 존재하기만 하면 ball 증가
 
-### checkGameWin : 게임 승리여부 확인
+#### checkGameWin : 게임 승리여부 확인
 
 - 스트라이크 값이 3이면 true 반환
 - 이를 활용하여 얼리 리턴을 통해 이후의 코드 조기 종료
 
-### formatGameResult : 게임 결과를 문자열에 맞게 반환
+#### formatGameResult : 게임 결과를 문자열에 맞게 반환
 
-### printResult : 게임 결과의 문자열을 html 요소에 출력
+- 볼, 스트라이크 순으로 출력
+- 맞는게 아무것도 없으면 낫싱 반환
 
-### showSuggestion : 다시 플레이하시겠습니까? 라는 텍스트와 버튼이 있는 div 보이기
+### handleElement.js
 
-### resetGame : 게임을 초기화 하는 함수
+#### printResult : 게임 결과의 문자열을 html 요소에 출력
 
-### hideSuggestion : 다시 플레이 하는 함수 가리기
+- 문자열을 그대로 출력
+
+#### showSuggestion : 다시 플레이하시겠습니까? 라는 텍스트와 버튼이 있는 div 보이기
+
+- 스타일을 display:block으로 전환
+
+#### hideSuggestion : 다시 플레이 하는 함수 가리기
+
+- 스타일을 display:none으로 전환
