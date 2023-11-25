@@ -9,8 +9,10 @@ const getUserInput = () => {
   return $userInput.value;
 };
 
-const $submitButton = document.querySelector('#submit');
-$submitButton.addEventListener('click', () => {
+const play = () => {
   numArray[1] = getUserInput();
   console.log(numArray);
-});
+};
+
+const $submitButton = document.querySelector('#submit');
+$submitButton.addEventListener('click', play);
