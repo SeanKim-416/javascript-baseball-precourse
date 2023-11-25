@@ -1,7 +1,7 @@
-export default function BaseballGame() {
-  this.play = function (computerInputNumbers, userInputNumbers) {
-    return '결과 값 String';
-  };
+function makeRandomIndex(arrayLength) {
+  const randomIndex = Math.floor(Math.random() * arrayLength);
+
+  return randomIndex;
 }
 
-new BaseballGame();
+console.log(makeRandomIndex(9));

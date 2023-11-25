@@ -15,3 +15,9 @@
   - `예) <button id="game-restart-button">재시작</button>`
 
 <br>
+
+## 기능구현
+
+### makeRandomIndex : 랜덤한 정수를 반환하는 함수
+
+- 배열의 길이를 인자로 받음.
