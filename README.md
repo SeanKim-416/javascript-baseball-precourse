@@ -56,8 +56,8 @@
 
 ### printResult : 게임 결과의 문자열을 html 요소에 출력
 
-### showSuggestion : 다시 플레이하시겠습니까? 라는 텍스트와 버튼이 있는 div 생성
+### showSuggestion : 다시 플레이하시겠습니까? 라는 텍스트와 버튼이 있는 div 보이기
 
 ### resetGame : 게임을 초기화 하는 함수
 
-### hideSuggestion :
+### hideSuggestion : 다시 플레이 하는 함수 가리기

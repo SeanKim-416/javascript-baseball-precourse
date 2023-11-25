@@ -55,6 +55,10 @@ const showSuggestion = () => {
   document.querySelector('#suggestion').style.display = 'block';
 };
 
+const hideSuggestion = () => {
+  document.querySelector('#suggestion').style.display = 'none';
+};
+
 const play = () => {
   const userNum = getUserInput();
   if (!userNum) return;
@@ -77,3 +81,15 @@ const play = () => {
 
 const $submitButton = document.querySelector('#submit');
 $submitButton.addEventListener('click', play);
+
+const resetGame = () => {
+  numArray[0] = createComputerNum();
+  const $userInput = document.querySelector('#user-input');
+  $userInput.value = '';
+  const $result = document.querySelector('#result');
+  $result.textContent = '';
+  hideSuggestion();
+};
+
+const $restartButton = document.querySelector('#game-restart-button');
+$restartButton.addEventListener('click', resetGame);
