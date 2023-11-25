@@ -46,6 +46,11 @@ const formatResult = (gameResult) => {
   return resultTemplate.length ? resultTemplate.join(' ') : '낫싱';
 };
 
+const printResult = (text = '') => {
+  const $resultDiv = document.querySelector('#result');
+  $resultDiv.textContent = text;
+};
+
 const play = () => {
   const userNum = getUserInput();
   if (!userNum) return;
@@ -57,11 +62,11 @@ const play = () => {
   const gameResult = getResult(numArray[0], numArray[1]);
 
   if (checkGameWin(gameResult)) {
-    console.log('이김');
+    printResult('🎉 정답을 맞추셨습니다!🎉');
     return;
   }
 
-  console.log(formatResult(gameResult));
+  printResult(formatResult(gameResult));
 };
 
 const $submitButton = document.querySelector('#submit');
